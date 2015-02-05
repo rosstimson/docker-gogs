@@ -1,0 +1,14 @@
+gogs:
+  image: rosstimson/gogs
+  links:
+    - db
+  ports:
+    - "3000:3000"
+
+db:
+  image: mariadb:10
+  environment:
+    MYSQL_ROOT_PASSWORD: rootpass
+    MYSQL_DATABASE: gogs
+    MYSQL_USER: gogs
+    MYSQL_PASSWORD: password
