@@ -1,7 +1,7 @@
 Gogs Dockerfile
 ===============
 
-![License: WTFPL](https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square) ![Docker Hub: rosstimson/gogs](https://img.shields.io/badge/dockerhub-rosstimson%2Fgogs-green.svg?style=flat-square)
+![Docker Hub: rosstimson/gogs](https://img.shields.io/badge/dockerhub-rosstimson%2Fgogs-green.svg?style=flat-square) ![License: WTFPL](https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square)
 
 Builds a Docker container with [Gogs][gogs]: A self-hosted Git service
 written in Go.
