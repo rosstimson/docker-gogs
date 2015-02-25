@@ -3,7 +3,8 @@ gogs:
   links:
     - db
   ports:
-    - "3000:3000"
+    - "22:22"
+    - "80:3000"
 
 db:
   image: mariadb:10
@@ -11,4 +12,4 @@ db:
     MYSQL_ROOT_PASSWORD: rootpass
     MYSQL_DATABASE: gogs
     MYSQL_USER: gogs
-    MYSQL_PASSWORD: password
+    MYSQL_PASSWORD: gogs

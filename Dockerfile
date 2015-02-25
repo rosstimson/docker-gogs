@@ -6,9 +6,9 @@
 # AUTHOR:   Ross Timson <ross@rosstimson.com>
 # LICENSE:  WTFPL - http://wtfpl.net
 #
-# Installs Gogs: A self-hosted Git service written in Go
+# Installs Gogs: A self-hosted Git service written in Go.
 #
-# Packer:   http://gogs.io
+# Gogs:   http://gogs.io
 #
 
 
@@ -19,6 +19,11 @@ ENV GOGS_VERSION v0.5.11
 ENV GOGS_PATH $GOPATH/src/github.com/gogits/gogs
 ENV GOGS_CUSTOM_CONF_PATH $GOGS_PATH/custom/conf
 ENV GOGS_CUSTOM_CONF $GOGS_CUSTOM_CONF_PATH/app.ini
+
+RUN apt-get update \
+    && apt-get -y install openssh-server \
+    && mkdir -p /var/run/sshd \
+    && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 
 RUN useradd -s /bin/bash -u 2000 -m -c gogs git
 RUN mkdir -p $GOPATH/src/github.com/gogits \
@@ -31,11 +36,12 @@ RUN mkdir -p $GOPATH/src/github.com/gogits \
     && cp conf/app.ini $GOGS_CUSTOM_CONF \
     && chown -R git $GOGS_PATH
 
-USER git
+ADD start.sh /start.sh
+RUN chmod +x /start.sh
+
 ENV HOME /home/git
-ENV USER git
 ENV PATH $GOGS_PATH:$PATH
 # WORKDIR $GOGS_PATH - env var expansion doesn't work here.
 WORKDIR /go/src/github.com/gogits/gogs
-EXPOSE 3000
-CMD ["gogs", "web"]
+EXPOSE 22 3000
+CMD ["/start.sh"]
