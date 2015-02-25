@@ -1,7 +1,7 @@
 Gogs Dockerfile
 ===============
 
-![Docker Hub: rosstimson/gogs](https://img.shields.io/badge/dockerhub-rosstimson%2Fgogs-green.svg?style=flat-square) ![License: WTFPL](https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square)
+[![Docker Hub: rosstimson/gogs][dockerhub-shield]][dockerhub-link]  [![License: WTFPL][license-shield]][wtfpl]
 
 Builds a Docker container with [Gogs][gogs]: A self-hosted Git service
 written in Go.
@@ -11,7 +11,7 @@ Usage
 
 There is a [Fig][fig] file that will help you quickly try out
 Gogs with a linked MariaDB container. Just `fig up` and visit:
-[localhost:3000/install](http://localhost:3000/install).
+[localhost/install](http://localhost/install).
 
 License and Author
 ------------------
@@ -28,3 +28,6 @@ License:: Licensed under [WTFPL][wtfpl].
 [gogs]:               http://gogs.io
 [fig]:                http://www.fig.sh
 [wtfpl]:              http://www.wtfpl.net
+[dockerhub-shield]:   https://img.shields.io/badge/dockerhub-rosstimson%2Fgogs-green.svg?style=flat-square
+[dockerhub-link]:     https://registry.hub.docker.com/u/rosstimson/gogs
+[license-shield]:     https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square
