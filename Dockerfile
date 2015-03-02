@@ -23,7 +23,8 @@ ENV GOGS_CUSTOM_CONF $GOGS_CUSTOM_CONF_PATH/app.ini
 RUN apt-get update \
     && apt-get -y install openssh-server \
     && mkdir -p /var/run/sshd \
-    && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
+    && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config \
+    && sed '/pam_loginuid.so/s/^/#/g' -i  /etc/pam.d/*
 
 RUN useradd -s /bin/bash -u 2000 -m -c gogs git
 RUN mkdir -p $GOPATH/src/github.com/gogits \
