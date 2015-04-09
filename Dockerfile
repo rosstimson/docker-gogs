@@ -15,7 +15,7 @@
 FROM golang:1.4
 MAINTAINER Ross Timson <ross@rosstimson.com>
 
-ENV GOGS_VERSION v0.5.13
+ENV GOGS_VERSION v0.6.1
 ENV GOGS_PATH $GOPATH/src/github.com/gogits/gogs
 ENV GOGS_CUSTOM_CONF_PATH $GOGS_PATH/custom/conf
 ENV GOGS_CUSTOM_CONF $GOGS_CUSTOM_CONF_PATH/app.ini
