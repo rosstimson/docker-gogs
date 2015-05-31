@@ -9,8 +9,8 @@ written in Go.
 Usage
 -----
 
-There is a [Fig][fig] file that will help you quickly try out
-Gogs with a linked MariaDB container. Just `fig up` and visit:
+There is a [Docker Compose][docker-compose] file that will help you quickly try
+out Gogs with a linked MariaDB container. Just `docker-compose  up` and visit:
 [localhost/install](http://localhost/install).
 
 License and Author
@@ -26,7 +26,7 @@ License:: Licensed under [WTFPL][wtfpl].
 [repo]:               https://github.com/rosstimson/docker-gogs
 [issues]:             https://github.com/rosstimson/docker-gogs/issues
 [gogs]:               http://gogs.io
-[fig]:                http://www.fig.sh
+[docker-compose]:     https://docs.docker.com/compose/
 [wtfpl]:              http://www.wtfpl.net
 [dockerhub-shield]:   https://img.shields.io/badge/dockerhub-rosstimson%2Fgogs-green.svg?style=flat-square
 [dockerhub-link]:     https://registry.hub.docker.com/u/rosstimson/gogs
